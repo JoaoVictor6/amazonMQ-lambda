@@ -10,6 +10,14 @@ docker compose up -d
 echo "Waiting for LocalStack to be ready..."
 sleep 30
 
+echo "Checking LocalStack health..."
+curl -s http://localhost:4566/health | grep '"status": "running"'
+
+if [ $? -ne 0 ]; then
+    echo "LocalStack is not healthy. Exiting."
+    exit 1
+fi
+
 export AWS_ACCESS_KEY_ID=test
 export AWS_SECRET_ACCESS_KEY=test
 export AWS_DEFAULT_REGION=us-east-1
