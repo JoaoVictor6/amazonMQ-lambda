@@ -32,6 +32,7 @@ Temos um script que após subir subir a infra localmente, será possivel validar
 *   [x] Criar um script para testar a infraestrutura
 *   [x] Escrever o código para as três funções Lambda
     *   [x] Função emissora
+        *   [x] devemos conseguir alterar o valor "isObsoleto" por parametros.
     *   [x] Função receptora principal
     *   [x] Função receptora de obsoletos
 *   [ ] Testar a solução

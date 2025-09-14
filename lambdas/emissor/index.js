@@ -11,7 +11,7 @@ exports.handler = async (event) => {
         QueueName: 'edicao-de-proposta',
         MessageBody: JSON.stringify({
             ...event,
-            isObsoleto: false
+            isObsoleto: Boolean(event.isObsoleto)
         })
     };
 
