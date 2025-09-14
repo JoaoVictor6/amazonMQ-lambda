@@ -6,7 +6,10 @@ echo "Starting LocalStack..."
 docker compose up -d
 
 echo "Waiting for LocalStack to be ready..."
-sleep 10
+sleep 30
+
+export AWS_ACCESS_KEY_ID=test
+export AWS_SECRET_ACCESS_KEY=test
 
 echo "Initializing Terraform..."
 cd terraform
