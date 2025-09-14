@@ -3,7 +3,7 @@
 set -e
 
 echo "Starting LocalStack..."
-docker-compose up -d
+docker compose up -d
 
 echo "Waiting for LocalStack to be ready..."
 sleep 10
@@ -31,4 +31,4 @@ terraform destroy -auto-approve
 cd ..
 
 echo "Stopping LocalStack..."
-docker-compose down
+docker compose down
