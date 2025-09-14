@@ -24,7 +24,6 @@ Temos um script que após subir subir a infra localmente, será possivel validar
 
 ## Checklist
 
-*   [ ] Criar uma nova branch git para o desenvolvimento
 *   [ ] Configurar o LocalStack com Docker
 *   [ ] Criar um script Terraform para definir a infraestrutura
     *   [ ] Criar uma instância do AmazonMQ
