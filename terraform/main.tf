@@ -30,6 +30,7 @@ provider "aws" {
     redshift         = "http://localhost:4566"
     route53          = "http://localhost:4566"
     
+    mq               = "http://localhost:4566"
     secretsmanager   = "http://localhost:4566"
     ses              = "http://localhost:4566"
     sns              = "http://localhost:4566"
