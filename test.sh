@@ -11,7 +11,10 @@ echo "Waiting for LocalStack to be ready..."
 sleep 30
 
 echo "Checking LocalStack health..."
-curl -s http://localhost:4566/health | grep '"status": "running"'
+HEALTH_OUTPUT=$(curl -s http://localhost:4566/health)
+echo "LocalStack Health Output: $HEALTH_OUTPUT"
+
+echo "$HEALTH_OUTPUT" | grep '"status": "running"'
 
 if [ $? -ne 0 ]; then
     echo "LocalStack is not healthy. Exiting."
