@@ -30,9 +30,9 @@ Temos um script que após subir subir a infra localmente, será possivel validar
     *   [x] Criar três funções Lambda (emissor, receptor principal e receptor de obsoletos)
     *   [x] Criar um EventBridge para conectar o AmazonMQ às funções Lambda
 *   [x] Criar um script para testar a infraestrutura
-*   [ ] Escrever o código para as três funções Lambda
-    *   [ ] Função emissora
-    *   [ ] Função receptora principal
-    *   [ ] Função receptora de obsoletos
+*   [x] Escrever o código para as três funções Lambda
+    *   [x] Função emissora
+    *   [x] Função receptora principal
+    *   [x] Função receptora de obsoletos
 *   [ ] Testar a solução
 *   [ ] Atualizar o arquivo `README.md` com os resultados dos testes
