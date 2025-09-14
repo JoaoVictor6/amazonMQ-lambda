@@ -8,18 +8,24 @@ echo "Starting LocalStack..."
 docker compose up -d
 
 echo "Waiting for LocalStack to be ready..."
-sleep 30
+sleep 60
 
-echo "Checking LocalStack health..."
-HEALTH_OUTPUT=$(curl -s http://localhost:4566/health)
-echo "LocalStack Health Output: $HEALTH_OUTPUT"
-
-echo "$HEALTH_OUTPUT" | grep '"status": "running"'
-
-if [ $? -ne 0 ]; then
-    echo "LocalStack is not healthy. Exiting."
-    exit 1
-fi
+echo "Waiting for LocalStack to be healthy..."
+for i in $(seq 1 10); do
+    HEALTH_OUTPUT=$(curl -s http://localhost:4566/health)
+    if echo "$HEALTH_OUTPUT" | grep -q '"status": "running"'; then
+        echo "LocalStack is healthy."
+        break
+    else
+        echo "LocalStack not healthy yet. Retrying in 5 seconds..."
+        sleep 5
+    fi
+    if [ $i -eq 10 ]; then
+        echo "LocalStack did not become healthy within the timeout. Exiting."
+        echo "Last LocalStack Health Output: $HEALTH_OUTPUT"
+        exit 1
+    fi
+done
 
 export AWS_ACCESS_KEY_ID=test
 export AWS_SECRET_ACCESS_KEY=test
