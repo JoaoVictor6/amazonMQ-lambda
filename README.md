@@ -36,3 +36,9 @@ Temos um script que após subir subir a infra localmente, será possivel validar
     *   [x] Função receptora de obsoletos
 *   [ ] Testar a solução
 *   [ ] Atualizar o arquivo `README.md` com os resultados dos testes
+
+## Resultados dos testes
+
+Não foi possível rodar os testes pois o `docker-compose` não está instalado. Por favor, instale o `docker-compose` e rode o script `test.sh` para testar a solução.
+
+[Como instalar o Docker Compose](https://docs.docker.com/compose/install/)
