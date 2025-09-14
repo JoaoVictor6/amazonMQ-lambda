@@ -21,3 +21,19 @@ Nessa POC criaremos 3 lambdas functions:
 
 ## Como testar
 Temos um script que após subir subir a infra localmente, será possivel validar oque cada lambda recebeu.
+
+## Checklist
+
+*   [ ] Criar uma nova branch git para o desenvolvimento
+*   [ ] Configurar o LocalStack com Docker
+*   [ ] Criar um script Terraform para definir a infraestrutura
+    *   [ ] Criar uma instância do AmazonMQ
+    *   [ ] Criar três funções Lambda (emissor, receptor principal e receptor de obsoletos)
+    *   [ ] Criar um EventBridge para conectar o AmazonMQ às funções Lambda
+*   [ ] Criar um script para testar a infraestrutura
+*   [ ] Escrever o código para as três funções Lambda
+    *   [ ] Função emissora
+    *   [ ] Função receptora principal
+    *   [ ] Função receptora de obsoletos
+*   [ ] Testar a solução
+*   [ ] Atualizar o arquivo `README.md` com os resultados dos testes
