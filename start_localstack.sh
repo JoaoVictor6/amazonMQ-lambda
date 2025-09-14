@@ -6,7 +6,7 @@ echo "Starting LocalStack..."
 docker compose up -d
 
 echo "Waiting for LocalStack services (Lambda, EventBridge, MQ) to be ready..."
-for i in $(seq 1 20); do
+for i in $(seq 1 30); do
     LAMBDA_READY=$(aws --endpoint-url=http://localhost:4566 lambda list-functions > /dev/null 2>&1; echo $?)
     EVENTS_READY=$(aws --endpoint-url=http://localhost:4566 events list-rules > /dev/null 2>&1; echo $?)
     MQ_READY=$(aws --endpoint-url=http://localhost:4566 mq list-brokers > /dev/null 2>&1; echo $?)
