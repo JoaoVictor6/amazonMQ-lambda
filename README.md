@@ -20,7 +20,7 @@ Nessa POC criaremos 3 lambdas functions:
 - Esse exemplo tende a ser o mais simples possivel. A ideia é validar essa infra.
 
 ## Como testar
-Temos um script que após subir subir a infra localmente, será possivel validar oque cada lambda recebeu.
+Temos um conjunto de scripts que orquestram o ambiente local e a validação da POC. O script principal é o `run_all.sh`.
 
 ## Checklist
 
@@ -30,6 +30,7 @@ Temos um script que após subir subir a infra localmente, será possivel validar
     *   [x] Criar três funções Lambda (emissor, receptor principal e receptor de obsoletos)
     *   [x] Criar um EventBridge para conectar o AmazonMQ às funções Lambda
 *   [x] Criar um script para testar a infraestrutura
+    *   [x] Refatorar script de teste em scripts menores.
 *   [x] Escrever o código para as três funções Lambda
     *   [x] Função emissora
         *   [x] devemos conseguir alterar o valor "isObsoleto" por parametros.
@@ -40,6 +41,4 @@ Temos um script que após subir subir a infra localmente, será possivel validar
 
 ## Resultados dos testes
 
-Não foi possível rodar os testes pois o `docker-compose` não está instalado. Por favor, instale o `docker-compose` e rode o script `test.sh` para testar a solução.
-
-[Como instalar o Docker Compose](https://docs.docker.com/compose/install/)
+O script de teste foi refatorado em scripts menores. Para executar todos os testes, utilize o script `run_all.sh`.
