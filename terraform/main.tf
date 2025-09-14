@@ -47,7 +47,7 @@ resource "aws_mq_broker" "amazon_mq" {
   host_instance_type = "mq.t2.micro"
   user {
     username = "admin"
-    password = "password"
+    password = "supersecretpassword"
   }
 }
 
