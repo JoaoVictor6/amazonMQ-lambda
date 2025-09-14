@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec > >(tee test.sh.log) 2>&1
+
 set -e
 
 echo "Starting LocalStack..."
