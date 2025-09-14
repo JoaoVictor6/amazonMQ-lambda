@@ -5,19 +5,17 @@ set -e
 echo "Starting LocalStack..."
 docker compose up -d
 
-echo "Waiting for LocalStack to be healthy..."
-for i in $(seq 1 10); do
-    HEALTH_OUTPUT=$(curl -s http://localhost:4566/health)
-    if echo "$HEALTH_OUTPUT" | grep -q '"status": "running"'; then
-        echo "LocalStack is healthy."
+echo "Waiting for LocalStack SQS to be ready..."
+for i in $(seq 1 20); do
+    if aws --endpoint-url=http://localhost:4566 sqs list-queues > /dev/null 2>&1; then
+        echo "LocalStack SQS is ready."
         break
     else
-        echo "LocalStack not healthy yet. Retrying in 5 seconds..."
+        echo "LocalStack SQS not ready yet. Retrying in 5 seconds..."
         sleep 5
     fi
-    if [ $i -eq 10 ]; then
-        echo "LocalStack did not become healthy within the timeout. Exiting."
-        echo "Last LocalStack Health Output: $HEALTH_OUTPUT"
+    if [ $i -eq 20 ]; then
+        echo "LocalStack SQS did not become ready within the timeout. Exiting."
         exit 1
     fi
 done
