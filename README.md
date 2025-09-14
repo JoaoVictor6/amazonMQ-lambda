@@ -25,10 +25,10 @@ Temos um script que após subir subir a infra localmente, será possivel validar
 ## Checklist
 
 *   [x] Configurar o LocalStack com Docker
-*   [ ] Criar um script Terraform para definir a infraestrutura
-    *   [ ] Criar uma instância do AmazonMQ
-    *   [ ] Criar três funções Lambda (emissor, receptor principal e receptor de obsoletos)
-    *   [ ] Criar um EventBridge para conectar o AmazonMQ às funções Lambda
+*   [x] Criar um script Terraform para definir a infraestrutura
+    *   [x] Criar uma instância do AmazonMQ
+    *   [x] Criar três funções Lambda (emissor, receptor principal e receptor de obsoletos)
+    *   [x] Criar um EventBridge para conectar o AmazonMQ às funções Lambda
 *   [ ] Criar um script para testar a infraestrutura
 *   [ ] Escrever o código para as três funções Lambda
     *   [ ] Função emissora
